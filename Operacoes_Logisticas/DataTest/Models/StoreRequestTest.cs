@@ -10,9 +10,6 @@ namespace DataTest.Models
 {
     public class StoreRequestTest
     {
-        //arrange
-        //act
-        //assert
         [Fact]
         public void StoreRequestHeritageTest()
         {

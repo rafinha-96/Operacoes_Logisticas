@@ -11,6 +11,6 @@ namespace Data.Models
         public string Name { get; set; }
         //public Product Product{ get; set; }
         public int Quantity { get; set; }
-        //public Status status { get; set; }
+        //public Status Status { get; set; }
     }
 }
