@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DataTest.Models
+namespace DataTest.Models.StoreRequestTest
 {
     public class StoreRequestTest
     {
@@ -15,18 +15,6 @@ namespace DataTest.Models
         {
                 //assert
                 Assert.IsAssignableFrom<BaseModel>(new StoreRequest());
-        }
-        [Fact]
-        public void StoreRequestPropertiesTest()
-        {
-            //arrange
-            StoreRequest storerequest = new StoreRequest();
-            int quantitytest = 10;
-            //act          
-            storerequest.Quantity = quantitytest;
-            //assert
-            Assert.Equal(quantitytest, storerequest.Quantity);
-            Assert.IsType<int>(storerequest.Quantity);
         }
         [Fact]
         public void StoreRequestCompositionTest()
