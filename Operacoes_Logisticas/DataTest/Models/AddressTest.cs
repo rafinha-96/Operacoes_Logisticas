@@ -25,13 +25,19 @@ namespace DataTest.Models
             bool IsDaughter = Ad.IsSubclassOf(Base);
             Assert.True(IsDaughter);
         }
+        // test types props
         [Fact]
-        public void TestingTypePropIdtOfAdress()
+        public void TestingTypePropIdOfAdress()
         {
             Address ad = new Address();
-            int id = 10;
-            ad.Id = id;
-            Assert.IsType<Int32>(ad.Id);
+            var lista = ad.GetType().GetProperties();
+            foreach (var x in lista)
+            {
+                if (x.Name == "Id")
+                {
+                    Assert.Equal("System.Int32", x.PropertyType.ToString());
+                }
+            }
         }
         [Fact]
         public void TestingTypePropStatetOfAdress()
@@ -110,6 +116,63 @@ namespace DataTest.Models
                     Assert.Equal("System.String", x.PropertyType.ToString());
                 }
             }
+        }
+        //test get set props
+        [Fact]
+        public void TestingGetSetPropIdtOfAdress()
+        {
+            Address ad = new Address();
+            int id = 10;
+            ad.Id = id;
+            Assert.IsType<Int32>(ad.Id);
+        }
+        [Fact]
+        public void TestingGetSetPropStatetOfAdress()
+        {
+            Address ad = new Address();
+            string state = "state";
+            ad.State = state;
+            Assert.Equal(state ,ad.State);
+        }
+        [Fact]
+        public void TestingGetSetPropCitytOfAdress()
+        {
+            Address ad = new Address();
+            string city = "city";
+            ad.City = city;
+            Assert.Equal(city, ad.City);
+        }
+        [Fact]
+        public void TestingGetSetPropStreettOfAdress()
+        {
+            Address ad = new Address();
+            string street = "Street";
+            ad.Street = street;
+            Assert.Equal(street, ad.Street);
+        }
+        [Fact]
+        public void TestingGetSetPropNumberOfAdress()
+        {
+            Address ad = new Address();
+            string number = "number";
+            ad.Number = number;
+            Assert.Equal(number, ad.Number);
+        }
+        [Fact]
+        public void TestingGetSetPropComplementOfAdress()
+        {
+            Address ad = new Address();
+            string complement = "complement";
+            ad.Complement = complement;
+            Assert.Equal(complement, ad.Complement);
+        }
+        [Fact]
+        public void TestingGetSetPropCepOfAdress()
+        {
+            Address ad = new Address();
+            string cep = "cep";
+            ad.Cep = cep;
+            Assert.Equal(cep, ad.Cep);
         }
     }
 }

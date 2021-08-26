@@ -5,40 +5,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
+
 namespace DataTest.Models
 {
-    public class ContactTest
+    public class StatusTest
     {
         [Fact]
-        public void TestingInstanceOfClassContact()
+        public void TestingInstanceOfClassStatus()
         {
             //arrange
-            Contact contactTest;
+            Status statusTest;
             //act
-            contactTest = new Contact();
+            statusTest = new Status();
             //assert
-            Assert.IsType<Contact>(contactTest);
+            Assert.IsType<Status>(statusTest);
         }
         [Fact]
-        public void TestingInheritOfClassContact()
+        public void TestingInheritOfClassStatus()
         {
             //arrange
             bool daughter;
             //act
             Type MotherClass = typeof(BaseModel);
-            Type DaughtClass = typeof(Contact);
+            Type DaughtClass = typeof(Status);
             daughter = DaughtClass.IsSubclassOf(MotherClass);
             //assert
             Assert.True(daughter);
         }
-        //testing types
+        //test of types
         [Fact]
-        public void TestingIdtOfClassContact()
+        public void TestingIdtOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
+            Status stt = new Status();
             //act
-            var lista = contt.GetType().GetProperties();
+            var lista = stt.GetType().GetProperties();
             foreach (var x in lista)
             {
                 if (x.Name == "Id")
@@ -49,15 +50,15 @@ namespace DataTest.Models
             }
         }
         [Fact]
-        public void TestingThelephonetOfClassContact()
+        public void TestingNametOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
+            Status stt = new Status();
             //act
-            var lista = contt.GetType().GetProperties();
+            var lista = stt.GetType().GetProperties();
             foreach (var x in lista)
             {
-                if (x.Name == "Telephone")
+                if (x.Name == "Name")
                 {
                     //assert
                     Assert.Equal("System.String", x.PropertyType.ToString());
@@ -65,15 +66,15 @@ namespace DataTest.Models
             }
         }
         [Fact]
-        public void TestingEmailtOfClassContact()
+        public void TestingDescriptiontOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
+            Status stt = new Status();
             //act
-            var lista = contt.GetType().GetProperties();
+            var lista = stt.GetType().GetProperties();
             foreach (var x in lista)
             {
-                if (x.Name == "Email")
+                if (x.Name == "Description")
                 {
                     //assert
                     Assert.Equal("System.String", x.PropertyType.ToString());
@@ -82,40 +83,40 @@ namespace DataTest.Models
         }
         // test of get and set props
         [Fact]
-        public void TestingGetSetIdOfClassContact()
+        public void TestingGetSetIdOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
+            Status stt = new Status();
             int id;
             //act
             id = 10;
-            contt.Id = id;
+            stt.Id = id;
             //asssert
-            Assert.Equal(id, contt.Id);
+            Assert.Equal(id, stt.Id);
         }
         [Fact]
-        public void TestingGetSetTelephoneOfClassContact()
+        public void TestingGetSetNameOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
-            string tel;
+            Status stt = new Status();
+            string name;
             //act
-            tel = "047";
-            contt.Telephone = tel;
+            name = "testovisk";
+            stt.Name = name;
             //asssert
-            Assert.Equal(tel, contt.Telephone);
+            Assert.Equal(name, stt.Name);
         }
         [Fact]
-        public void TestingGetSetEmailOfClassContact()
+        public void TestingGetSetDescriptionOfClassStatus()
         {
             //arrange
-            Contact contt = new Contact();
-            string mail;
+            Status stt = new Status();
+            string desc;
             //act
-            mail = "047";
-            contt.Email = mail;
+            desc = "descri";
+            stt.Description = desc;
             //asssert
-            Assert.Equal(mail, contt.Email);
+            Assert.Equal(desc, stt.Description);
         }
     }
 }
