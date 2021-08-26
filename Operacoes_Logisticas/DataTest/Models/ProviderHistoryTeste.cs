@@ -58,15 +58,5 @@ namespace DataTest.Models
             Assert.IsType<DateTime>(model.Date);
             Assert.Equal(date, model.Date);
         }
-
-        [Fact]
-        public void TestingProviderHistoryComposition()
-        {
-            //Arrange
-
-            //Act
-
-            //Assert
-        }
     }
 }
