@@ -37,6 +37,7 @@ namespace DataTest.Models
             providerRequestInstance.Id = idChanged;
 
             Assert.Equal(idChanged, providerRequestInstance.Id);
+            Assert.IsType<int>(providerRequestInstance.Quantity);
         }
         [Fact]
         public void TestPropQuantityClassProvider()
@@ -47,6 +48,7 @@ namespace DataTest.Models
             providerRequestInstance.Quantity = quantityChanged;
 
             Assert.Equal(quantityChanged, providerRequestInstance.Quantity);
+            Assert.IsType<int>(providerRequestInstance.Quantity);
         }
     }
 }

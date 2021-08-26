@@ -37,6 +37,7 @@ namespace DataTest.Models
             providerInstance.Id = idChanged;
 
             Assert.Equal(idChanged, providerInstance.Id);
+            Assert.IsType<int>(providerInstance.Id);
         }
         [Fact]
         public void TestPropCnpjClassProvider()
@@ -47,6 +48,7 @@ namespace DataTest.Models
             providerInstance.Cnpj = cnpjChanged;
 
             Assert.Equal(cnpjChanged, providerInstance.Cnpj);
+            Assert.IsType<string>(providerInstance.Cnpj);
         }
     }
 }
