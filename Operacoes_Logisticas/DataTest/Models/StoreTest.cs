@@ -10,17 +10,12 @@ namespace DataTest.Models
 {
     public class StoreTest
     {
-        //arrange
-        //act
-        //assert
-
         [Fact]
         public void TestingStoreHeritage()
         {
             //assert
             Assert.IsAssignableFrom<BaseModel>(new Store());
         }
-
         [Fact]
         public void TestingStoreProperties()
         {
