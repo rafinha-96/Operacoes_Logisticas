@@ -37,13 +37,36 @@ namespace DataTest.Models
         public void TestingStoreHistoryIdProp()
         {
             //Arrange
-            StoreHistory model;
+            StoreHistory model = new StoreHistory();
             int id = 1;
             //Act
-            model = new StoreHistory();
             model.Id = id;
             //Assert
+            Assert.IsType<int>(model.Id);
             Assert.Equal(id, model.Id);
+        }
+
+        [Fact]
+        public void TestingStoreHistoryDateTimeProp()
+        {
+            //Arrange
+            StoreHistory model = new StoreHistory();
+            DateTime date = DateTime.Today;
+            //Act
+            model.Date = date;
+            //Assert
+            Assert.IsType<DateTime>(model.Date);
+            Assert.Equal(date, model.Date);
+        }
+
+        [Fact]
+        public void TestingStoreHistoryComposition()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
         }
     }
 }
