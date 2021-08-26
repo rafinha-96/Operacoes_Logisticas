@@ -26,18 +26,20 @@ namespace DataTest.Models
         {
             //arrange
             Store store = new Store();
-            //act
             int idtest = 10;
             string nametest = "TestStore";
             int quantitytest = 20;
-
+            //act
             store.Id = idtest;
             store.Name = nametest;
             store.Quantity = quantitytest;
             //assert
             Assert.Equal(idtest, store.Id);
+            Assert.IsType<int>(store.Id);
             Assert.Equal(nametest, store.Name);
+            Assert.IsType<string>(store.Name);
             Assert.Equal(quantitytest, store.Quantity);
+            Assert.IsType<int>(store.Quantity);
 
         }
     }
