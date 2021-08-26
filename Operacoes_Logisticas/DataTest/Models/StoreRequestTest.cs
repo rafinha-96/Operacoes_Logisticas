@@ -41,5 +41,16 @@ namespace DataTest.Models
             Assert.IsType<Store>(storerequest.Store);
 
         }
+        [Fact]
+
+        public void TestingStoreRequestInstance()
+        {
+            //arrange
+            StoreRequest storerequestinstance;
+            //act
+            storerequestinstance = Activator.CreateInstance<StoreRequest>();
+            //assert
+            Assert.IsType<StoreRequest>(storerequestinstance);
+        }
     }
 }

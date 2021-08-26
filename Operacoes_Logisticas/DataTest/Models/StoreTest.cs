@@ -37,5 +37,15 @@ namespace DataTest.Models
             Assert.IsType<int>(store.Quantity);
 
         }
+        [Fact]
+        public void TestingStoreInstance()
+        {
+            //arrange
+            Store storeInstance;
+            //act
+            storeInstance = Activator.CreateInstance<Store>();
+            //assert
+            Assert.IsType<Store>(storeInstance);
+        }
     }
 }
