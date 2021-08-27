@@ -9,6 +9,6 @@ namespace Data.Models
     public class ProviderHistory : BaseModel
     {
         public DateTime Date { get; set; }
-        //public ProviderRequest ProviderRequest { get; set; }
+        public ProviderRequest ProviderRequest { get; set; }
     }
 }
