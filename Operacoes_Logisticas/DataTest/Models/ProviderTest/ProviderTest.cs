@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace DataTest.Models
+namespace DataTest.Models.ProviderTest
 {
     public class ProviderTest
     {

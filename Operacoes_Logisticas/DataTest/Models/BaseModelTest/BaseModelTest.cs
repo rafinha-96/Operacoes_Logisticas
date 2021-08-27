@@ -13,8 +13,6 @@ namespace DataTest.Models
         [Fact]
         public void TestAbstractClassBaseModel()
         {
-            BaseModel baseInstance;
-
             Action activatorBaseInstance = () => Activator.CreateInstance<BaseModel>();
 
             Assert.Throws<MissingMethodException>(activatorBaseInstance);
