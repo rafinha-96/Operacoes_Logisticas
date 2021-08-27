@@ -9,7 +9,7 @@ using Data.Models;
 
 namespace DataTest.Models.StoreRequestTest
 {
-    class StatusPropertyStoreRequestTest
+    public class StatusPropertyStoreRequestTest
     {
         [Fact]
         public void TestingStorePropertyExists()
@@ -34,5 +34,4 @@ namespace DataTest.Models.StoreRequestTest
             Assert.Equal(tstatus, typeProperty);
         }
     }
-}
 }
