@@ -14,33 +14,40 @@ namespace DataTest.Models.StoreTest
         [Fact]
         public void TestingQuantityPropertyStoreExists()
         {
+            //Arrange
             Type t = typeof(Store);
+            //Act
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
+            //Assert
             Assert.NotNull(pI);
         }
-
         [Fact]
         public void TestingQuantityPropertyStoreIsInt()
         {
+            //Arrange
             Type t = typeof(Store);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
             Type typeString = typeof(int);
+            //Act
             Type typeProperty = pI != null ? pI.PropertyType : null;
+            //Assert
             Assert.Equal(typeString, typeProperty);
         }
         [Fact]
         public void TestingQuantityPropertyStoreGet()
         {
+            //Arrange
             Store s = new Store();
             Type t = typeof(Store);
-            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
-
             object valueProp = null;
+            //Act
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");   
             if (pI != null && pI.PropertyType == typeof(Int32))
             {
                 pI.SetValue(s, 2);
                 valueProp = pI.GetValue(s);
             }
+            //Assert
             Assert.NotNull(valueProp);
         }
     }

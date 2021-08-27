@@ -14,14 +14,15 @@ namespace DataTest.Models.StoreTest
         [Fact]
         public void TestingNamePropertyStoreExists()
         {
+            //Arrange
             Type t = typeof(Store);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Name");
             Assert.NotNull(pI);
         }
-
         [Fact]
         public void TestingNamePropertyStoreIsString()
         {
+            //Arrange
             Type t = typeof(Store);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Name");
             Type typeString = typeof(string);
@@ -31,6 +32,7 @@ namespace DataTest.Models.StoreTest
         [Fact]
         public void TestingNamePropertyStoreGet()
         {
+            //Arrange
             Store s = new Store();
             Type t = typeof(Store);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Name");
