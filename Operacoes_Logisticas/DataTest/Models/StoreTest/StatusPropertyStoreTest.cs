@@ -33,5 +33,23 @@ namespace DataTest.Models.StoreTest
             //Assert
             Assert.Equal(tstatus, typeProperty);
         }
+
+        [Fact]
+        public void TestingStatusPropertyStoreRequestGet()
+        {
+            Store s = new Store();
+            Type t = typeof(Store);
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Status");
+
+            object valueProp = null;
+            if (pI != null && pI.PropertyType == typeof(Status))
+            {
+
+                pI.SetValue(s, Activator.CreateInstance<Status>());
+                valueProp = pI.GetValue(s);
+            }
+
+            Assert.NotNull(valueProp);
+        }
     }
 }
