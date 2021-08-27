@@ -50,23 +50,5 @@ namespace DataTest.Models.StoreTest
             //Assert
             Assert.NotNull(valueProp);
         }
-
-        [Fact]
-        public void TestingProductPropertyStoreRequestGet()
-        {
-            Store s = new Store();
-            Type t = typeof(Store);
-            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Product");
-
-            object valueProp = null;
-            if (pI != null && pI.PropertyType == typeof(Product))
-            {
-
-                pI.SetValue(s, Activator.CreateInstance<Product>());
-                valueProp = pI.GetValue(s);
-            }
-
-            Assert.NotNull(valueProp);
-        }
     }
 }
