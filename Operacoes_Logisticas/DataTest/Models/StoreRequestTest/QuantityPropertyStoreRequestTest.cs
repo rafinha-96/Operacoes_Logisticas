@@ -12,7 +12,7 @@ namespace DataTest.Models.StoreRequestTest
     public class QuantityPropertyStoreRequestTest
     {
         [Fact]
-        public void TestingQuantityPropertyExists()
+        public void TestingQuantityPropertyStoreRequestExists()
         {
             Type t = typeof(StoreRequest);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
@@ -20,7 +20,7 @@ namespace DataTest.Models.StoreRequestTest
         }
 
         [Fact]
-        public void TestingQuantityPropertyIsInt()
+        public void TestingQuantityPropertyStoreRequestIsInt()
         {
             Type t = typeof(StoreRequest);
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
@@ -29,7 +29,7 @@ namespace DataTest.Models.StoreRequestTest
             Assert.Equal(typeString, typeProperty);
         }
         [Fact]
-        public void TestingQuantityPropertyGet()
+        public void TestingQuantityPropertyStoreRequestGet()
         {
             Store s = new Store();
             Type t = typeof(Store);
