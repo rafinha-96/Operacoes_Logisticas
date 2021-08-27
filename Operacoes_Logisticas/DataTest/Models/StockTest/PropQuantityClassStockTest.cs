@@ -26,9 +26,9 @@ namespace DataTest.Models.StockTest
         {
             //Arrange
             Type instanceType = typeof(Stock);
-            //Act
             PropertyInfo idInfo = instanceType.GetProperties().FirstOrDefault(i => i.Name == "Quantity");
             Type typeInt = typeof(int);
+            //Act
             Type typeStock = idInfo!=null?idInfo.PropertyType:null;
             //Assert
             Assert.Equal(typeInt,typeStock);
@@ -39,9 +39,9 @@ namespace DataTest.Models.StockTest
             //Arrange
             Stock instaceStock = Activator.CreateInstance<Stock>();
             Type instanceType = typeof(Stock);
-            //Act
             PropertyInfo idInfo = instanceType.GetProperties().FirstOrDefault(i => i.Name == "Quantity");
             object valueProp = null;
+            //Act
             if (idInfo != null && idInfo.PropertyType == typeof(int))
             {
                 idInfo.SetValue(instaceStock,0);

@@ -15,14 +15,14 @@ namespace DataTest.Models.Addres
         public void TestIfAddressStateExist()
         {
             Type adre = typeof(Address);
-            PropertyInfo prop = adre.GetProperties().FirstOrDefault(t => t.Name == "State");
+            PropertyInfo prop = adre.GetProperties().FirstOrDefault(t => t.Name == "City");
             Assert.NotNull(prop);
         }
         [Fact]
         public void TestIfAddressStateIsString()
         {
             Type t = typeof(Address);
-            PropertyInfo prop = t.GetProperties().FirstOrDefault(p => p.Name == "State");
+            PropertyInfo prop = t.GetProperties().FirstOrDefault(p => p.Name == "City");
             Type typestr = typeof(string);
             Type typeProperty = prop != null ? prop.PropertyType : null;
             Assert.Equal(typestr, typeProperty);
@@ -32,7 +32,7 @@ namespace DataTest.Models.Addres
         {
             Address s = new Address();
             Type t = typeof(Address);
-            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "State");
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "City");
             object valueProp = null;
             if (pI != null && pI.PropertyType == typeof(String))
             {

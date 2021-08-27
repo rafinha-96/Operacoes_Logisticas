@@ -13,12 +13,14 @@ namespace DataTest.Models.StockTest
         [Fact]
         public void TesteInstanciaClassStock()
         {
-            //Arrenge             
-            Stock instanciaStock;
+            //Arrange
+            Stock stockInstance = Activator.CreateInstance<Stock>();
+            Type compareType = typeof(Stock);
+            Type typeStock;
             //Act
-            instanciaStock = Activator.CreateInstance<Stock>();
+            typeStock = stockInstance.GetType();
             //Assert
-            Assert.IsType<Stock>(instanciaStock);
+            Assert.Equal(compareType, typeStock);
         }
         [Fact]
         public void TestingHeritageClassStock()
