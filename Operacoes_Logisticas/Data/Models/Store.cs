@@ -9,8 +9,8 @@ namespace Data.Models
     public class Store : BaseModel
     {
         public string Name { get; set; }
-        //public Product Product{ get; set; }
+        public Product Product{ get; set; }
         public int Quantity { get; set; }
-        //public Status Status { get; set; }
+        public Status Status { get; set; }
     }
 }
