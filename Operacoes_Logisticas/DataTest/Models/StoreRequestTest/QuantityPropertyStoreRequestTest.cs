@@ -38,8 +38,8 @@ namespace DataTest.Models.StoreRequestTest
         public void TestingQuantityPropertyStoreRequestGet()
         {
             //Arrange
-            Store s = new Store();
-            Type t = typeof(Store);
+            StoreRequest s = new StoreRequest();
+            Type t = typeof(StoreRequest);
             object valueProp = null;
             //Act
             PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Quantity");
