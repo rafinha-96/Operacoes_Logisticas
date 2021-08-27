@@ -9,6 +9,7 @@ namespace Data.Models
     public class StoreHistory : BaseModel
     {
         public DateTime Date { get; set; }
-        //public StoreRequest StoreRequest { get; set; }
+        public StoreRequest StoreRequest { get; set; }
+
     }
 }

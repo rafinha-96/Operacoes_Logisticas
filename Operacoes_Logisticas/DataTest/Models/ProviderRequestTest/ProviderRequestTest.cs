@@ -8,17 +8,11 @@ using Xunit;
 
 namespace DataTest.Models.ProviderRequestTest
 {
-    public class ProviderRequestTest
+    public class ProviderRequestTest : BaseClassModelTest<ProviderRequest>
     {
-        [Fact]
-        public void TestInstanceClassProviderRequest()
-        {
-            ProviderRequest providerRequestInstance;
-
-            providerRequestInstance = Activator.CreateInstance<ProviderRequest>();
-
-            Assert.IsType<ProviderRequest>(providerRequestInstance);
-        }
+        public int Quantity { get; set; }
+        //public Provider Provider { get; set; }
+        //public Product Product { get; set; }
         [Fact]
         public void TestHeritageClassProviderRequest()
         {
