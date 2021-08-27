@@ -5,10 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using Xunit;
+using Data.Models;
 
 namespace DataTest.Models.StoreTest
 {
-    class StatusPropertyStoreTest
+    public class StatusPropertyStoreTest
     {
+        [Fact]
+        public void TestingStatusPropertyExists()
+        {
+            //Arrange
+            Type t = typeof(Store);
+            //Act
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Status");
+            //Assert
+            Assert.NotNull(pI);
+        }
+        [Fact]
+        public void TestingStatusPropertyComposition()
+        {
+            //Arrange
+            Type t = typeof(Store);
+            Type tstatus = typeof(Status);
+            //Act
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Status");
+            Type typeProperty = pI != null ? pI.PropertyType : null;
+            //Assert
+            Assert.Equal(tstatus, typeProperty);
+        }
     }
 }

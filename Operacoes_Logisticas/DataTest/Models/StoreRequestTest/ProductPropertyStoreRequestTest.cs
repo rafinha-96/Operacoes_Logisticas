@@ -12,7 +12,7 @@ namespace DataTest.Models.StoreRequestTest
     public class ProductPropertyStoreRequestTest
     {
         [Fact]
-        public void TestingStorePropertyExists()
+        public void TestingProductPropertyExists()
         {
             //Arrange
             Type t = typeof(StoreRequest);
@@ -22,13 +22,13 @@ namespace DataTest.Models.StoreRequestTest
             Assert.NotNull(pI);
         }
         [Fact]
-        public void TestingStorePropertyComposition()
+        public void TestingProductPropertyComposition()
         {
             //Arrange
             Type t = typeof(StoreRequest);
             Type tproduct = typeof(Product);
             //Act
-            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Store");
+            PropertyInfo pI = t.GetProperties().FirstOrDefault(p => p.Name == "Product");
             Type typeProperty = pI != null ? pI.PropertyType : null;
             //Assert
             Assert.Equal(tproduct, typeProperty);

@@ -12,7 +12,7 @@ namespace DataTest.Models.StoreRequestTest
     public class StatusPropertyStoreRequestTest
     {
         [Fact]
-        public void TestingStorePropertyExists()
+        public void TestingStatusPropertyExists()
         {
             //Arrange
             Type t = typeof(StoreRequest);
@@ -22,7 +22,7 @@ namespace DataTest.Models.StoreRequestTest
             Assert.NotNull(pI);
         }
         [Fact]
-        public void TestingStorePropertyComposition()
+        public void TestingStatusPropertyComposition()
         {
             //Arrange
             Type t = typeof(StoreRequest);
